@@ -28,9 +28,9 @@
   <title>Frontend Mentor | Advice Generator App</title>
 </svelte:head>
 
-<main class="bg-blue-dark text-cyan min-h-screen grid place-content-center p-4">
+<main class="bg-blue-dark text-cyan min-h-screen flex flex-col items-center p-4">
   <div
-    class="relative bg-blue rounded-lg flex flex-col gap-6 text-center px-6 sm:px-12 pt-10 sm:pt-12 pb-16 sm:pb-[4.5rem] sm:max-w-[33.5em]"
+    class="relative bg-blue rounded-lg flex flex-col gap-6 text-center px-6 sm:px-12 pt-10 sm:pt-12 pb-16 sm:pb-[4.5rem] sm:max-w-[33.5em] my-auto"
   >
     <!-- Advice id -->
     <span class="text-green font-semibold text-xs sm:text-[0.8125rem] uppercase tracking-[0.25em]"
@@ -53,5 +53,9 @@
     >
       <img src={diceSvg} alt="" class={loading ? "animate-spin" : "animate-none"} />
     </button>
+  </div>
+  <div class="text-xs text-center tracking-wider">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+    <a href="https://github.com/AntoineC-dev" class="text-[hsl(228,45%,44%)] font-extrabold">Antoine C</a>.
   </div>
 </main>
