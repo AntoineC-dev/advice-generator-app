@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 module.exports = {
   content: ["./src/app.html", "./src/**/*.{html,js,svelte,ts}"],
   theme: {
@@ -20,5 +21,20 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ matchUtilities, theme }) => {
+      matchUtilities(
+        {
+          "shadow-glow": (value) => {
+            return {
+              boxShadow: `0px 0px 35px 0px ${value}`,
+            };
+          },
+        },
+        {
+          values: theme("colors"),
+        }
+      );
+    }),
+  ],
 };
