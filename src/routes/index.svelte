@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { desktopDivider, diceSvg, mobileDivider, spinnerSvg } from "../assets/icons";
+  import { desktopDivider, diceSvg, mobileDivider } from "../assets/icons";
   import type { Advice } from "../types";
   import { ADVICESLIP_API } from "../api/adviceslip.api";
-  import { blur, fly } from "svelte/transition";
+  import { fly } from "svelte/transition";
   import { quadInOut } from "svelte/easing";
 
   // Fetch once on page load from the "index.ts" GET method
@@ -14,9 +14,8 @@
     loading = true;
     const response = await ADVICESLIP_API.getRandomAdvice();
     slip = response.slip;
-    // Any repeat-request within 2 seconds will return the same piece of advice
-    // So we kindly wait
-    setTimeout(() => (loading = false), 2000);
+    // Prevent spamming the API
+    setTimeout(() => (loading = false), 1000);
   };
   let innerWidth = 0;
   $: src = innerWidth < 768 ? mobileDivider : desktopDivider;
