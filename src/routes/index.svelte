@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { desktopDivider, diceSvg, mobileDivider } from "../assets/icons";
-  import type { Advice } from "../types";
-  import { ADVICESLIP_API } from "../api/adviceslip.api";
-  import { fly } from "svelte/transition";
-  import { quadInOut } from "svelte/easing";
+  import { desktopDivider, diceSvg, mobileDivider } from '../assets/icons';
+  import type { Advice } from '../types';
+  import { ADVICESLIP_API } from '../api/adviceslip.api';
+  import { fly } from 'svelte/transition';
+  import { quadInOut } from 'svelte/easing';
 
   // Fetch once on page load from the "index.ts" GET method
   export let slip: Advice;
@@ -50,7 +50,7 @@
       aria-label="Get new advice"
       class="bg-green absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 rounded-full p-5 transition-shadow duration-300 ease-in-out [@media(hover:hover)]:hover:shadow-glow-green focus-outline"
     >
-      <img src={diceSvg} alt="" class={loading ? "animate-spin" : "animate-none"} />
+      <img src={diceSvg} alt="" class={loading ? 'animate-spin' : 'animate-none'} />
     </button>
   </div>
   <div class="text-xs text-center tracking-wider">
