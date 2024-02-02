@@ -53,6 +53,7 @@
       <img src={diceSvg} alt="" class={loading ? 'animate-spin' : 'animate-none'} />
     </button>
   </div>
+  <p>Je t'aime Maureen</p>
   <div class="text-xs text-center tracking-wider">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
     <a href="https://github.com/AntoineC-dev" class="text-[hsl(228,45%,44%)] font-extrabold">Antoine C</a>.
